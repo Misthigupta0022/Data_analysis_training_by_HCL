@@ -1,0 +1,44 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+from IPython.display import display, Image
+
+sales = pd.DataFrame({
+    "North": ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "Laptops": [40, 42, 45, 30, 36, 35, 41, 48, 52, 85, 95, 60],
+    "Phones": [55, 54, 58, 60, 57, 50, 62, 64, 66, 90, 98, 72],
+    "Headphones": [20, 22, 25, 15, 18, 17, 30, 35, 40, 45, 50, 55]
+})
+
+display(sales)
+
+plt.figure(figsize=(10, 6))
+
+colors = {
+  "Laptops": "#C2185B",      # Dark Pink
+"Phones": "#F8C8DC",        # Baby Pink
+"Headphones": "#FF69B4"     # Hot Pink
+}
+
+for product in ["Laptops", "Phones", "Headphones"]:
+    plt.plot(
+        sales["North"],
+        sales[product],
+        marker="o",
+        label=product,
+        color=colors[product],
+        linewidth=2.5
+    )
+
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.title("Monthly Sales in North Region")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+
+plt.savefig("sales.png")
+plt.show()
