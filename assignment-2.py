@@ -123,16 +123,45 @@ print("Highest average bill: $", round(avg_bill.max(), 2))
 # •	Redraw the plot with hue="sex" added and note one difference you see.
 
 
+fig, axes = plt.subplots(1, 2, figsize=(12, 4))
+sns.boxplot(data="tips", x="day", y="total_bill", order="day_order", ax=axes[0], color="lightblue")
+axes[0].set_title("Total Bill by Day")
+axes[0].set_xlabel("Day")
+axes[0].set_ylabel("Total Bill ($)")
+sns.boxplot(data=tips, x="day", y="total_bill", hue="sex", order=day_order, ax=axes[1])
+axes[1].set_title("Total Bill by Day and Sex")
+axes[1].set_xlabel("Day")
+axes[1].set_ylabel("Total Bill ($)")
+axes[1].legend(title="Sex")
+plt.tight_layout()
+plt.show()
+
+
 
 # TASK 6
 # •	Draw sns.scatterplot(data=tips, x="total_bill", y="tip", hue="smoker", style="time").
 # •	In one line, say whether smokers and non-smokers tip differently.
 
 
+plt.figure(figsize=(9, 5))
+sns.scatterplot(data="tips", x="total_bill", y="tip", hue="smoker", style="time", s=75)
+plt.title("Total Bill vs Tip by Smoker and Meal Time")
+plt.xlabel("Total Bill ($)")
+plt.ylabel("Tip ($)")
+plt.tight_layout()
+plt.show()
+print(tips.groupby("smoker")["tip"].mean().round(2))
+
+
 
 # TASK 7
 # •	Draw sns.pairplot(iris, hue="species", vars=["sepal_length", "sepal_width", "petal_length", "petal_width"]).
 # •	Which two measurements separate the three species best? Which species is the easiest to identify?
+
+
+g = sns.pairplot(iris, hue="species", vars=["sepal_length", "sepal_width", "petal_length", "petal_width"])
+g.figure.suptitle("Iris Measurements by Species", y=1.02)
+plt.show()
 
 
 
@@ -145,11 +174,25 @@ print("Highest average bill: $", round(avg_bill.max(), 2))
 # •	Write two things you can do in this chart that you could not do in your Matplotlib charts.
 
 
+fig = px.scatter(tips, x="total_bill", y="tip", color="day", size="size",
+                 hover_data=["sex", "time"], title="Bill vs Tip")
+fig.update_layout(xaxis_title="Total Bill ($)", yaxis_title="Tip ($)")
+fig.show()
+
+
 
 # TASK 9
 # •	Draw px.box(tips, x="day", y="total_bill", color="sex").
 # •	Draw px.histogram(tips, x="total_bill", color="time", nbins=15).
 # •	Which meal, Lunch or Dinner, has larger bills in general?
+
+
+fig = px.box(tips, x="day", y="total_bill", color="sex", title="Bills by Day and Sex")
+fig.update_layout(xaxis_title="Day", yaxis_title="Total Bill ($)")
+fig.show()
+fig = px.histogram(tips, x="total_bill", color="time", nbins=15, title="Total Bill Distribution by Meal")
+fig.update_layout(xaxis_title="Total Bill ($)", yaxis_title="Number of Bills")
+fig.show()
 
 
 
@@ -159,8 +202,10 @@ print("Highest average bill: $", round(avg_bill.max(), 2))
 # •	Use the slider to zoom into any three-month period and note what happened there.
 
 
-
-# TASK 11
-# Task 11: Copy this table into a Markdown cell and complete it based on what you experienced.
-
+fig = px.line(stocks, x="date", y=["GOOG", "AAPL", "AMZN"], title="Stock Prices Relative to Starting Week")
+fig.update_layout(xaxis_title="Date", yaxis_title="Relative Stock Price (start = 1.0)", legend_title="Company")
+fig.update_xaxes(rangeslider_visible=True)
+fig.show()
+print("Last available observations:")
+print(stocks[["date", "GOOG", "AAPL", "AMZN"]].tail(1).to_string(index=False))
 
