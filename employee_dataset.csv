@@ -1,0 +1,31 @@
+Name,Age,Performance,Job Station,Skills,Branch,Annual Package,Performance Score
+Anil,25,Excellent,Bangalore,Python,ECE,50000,3
+Bala,30,Good,Kolkata,SQL,CSE,60000,2
+Charu,22,Average,Mumbai,Java,IT,55000,1
+Chitra,28,Excellent,Pune,Excel,ME,65000,3
+Dinesh,35,Good,New Delhi,Machine Learning,CE,70000,2
+Dev,27,Average,Chennai,C++,CSE,52000,1
+Esha,24,Excellent,Hyderabad,Web Development,ECE,58000,3
+Fahad,29,Good,Mumbai,Data Analysis,ME,62000,2
+Gita,31,Average,Noida,Excel,IT,68000,1
+Hari,26,Excellent,Bangalore,Communication,CE,72000,3
+Isha,23,Good,Kolkata,SQL,ME,54000,2
+Jatin,32,Average,New Delhi,Python,IT,64000,1
+Kiran,34,Excellent,Pune,C++,CSE,0,3
+Lata,21,Good,Chennai,Java,ECE,56000,2
+Mohan,33,Average,Noida,Data Analysis,CE,74000,1
+Nisha,36,Excellent,Hyderabad,Machine Learning,IT,58000,3
+Omkar,28,Good,Mumbai,Web Development,ME,68000,2
+Pooja,29,Average,Bangalore,Excel,CSE,75000,1
+Qasim,30,Excellent,Chennai,Python,ECE,62000,3
+Rita,27,Good,Pune,Communication,IT,71000,2
+Rahul,25,Average,New Delhi,Java,CE,0,1
+Sahil,31,Excellent,Noida,SQL,ECE,67000,3
+Tina,22,Good,Kolkata,Machine Learning,ME,59000,2
+Unnati,24,Average,Hyderabad,C++,IT,63000,1
+Usha,26,Excellent,Mumbai,Data Analysis,CSE,76000,3
+Vani,28,Good,Pune,Web Development,ECE,57000,2
+Vikram,30,Average,Chennai,Python,CE,69000,1
+Waseem,32,Excellent,Bangalore,Communication,CSE,0,3
+Xena,34,Good,Noida,Excel,ME,61000,2
+Yash,29,Average,New Delhi,SQL,IT,73000,1
